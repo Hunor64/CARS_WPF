@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CARS_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1000" Width="800">
     <Grid>
-
+        <StackPanel>
+            <!-- a Feladat -->
+            <StackPanel MaxHeight="300px" Margin="10px">
+                <Label x:Name="lblOrderCount" Content="0"/>
+                <ScrollViewer>
+                    <DataGrid x:Name="dtgProducts" SelectionChanged="dtgProducts_SelectionChanged"/>
+                </ScrollViewer>
+            </StackPanel>
+            <!--b Feladat-->
+            <StackPanel MaxHeight="300px" Margin="10px">
+                <ComboBox x:Name="cmbCountries" SelectionChanged="cmbCountries_SelectionChanged"/>
+                <DataGrid x:Name="dtgCustomers">
+                    <DataGrid.Columns></DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <!--c Feladat-->
+            <StackPanel MaxHeight="400px" Margin="10px">
+                <DataGrid x:Name="dtgOrders" SelectionChanged="dtgOrders_SelectionChanged" MaxHeight="300px"/>
+                <ListBox x:Name="lstOrderDetails" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
