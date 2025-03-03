@@ -12,7 +12,12 @@
             <StackPanel MaxHeight="300px" Margin="10px">
                 <Label x:Name="lblOrderCount" Content="0"/>
                 <ScrollViewer>
-                    <DataGrid x:Name="dtgProducts" SelectionChanged="dtgProducts_SelectionChanged"/>
+                    <DataGrid AutoGenerateColumns="False" x:Name="dtgProducts" SelectionChanged="dtgProducts_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding ProductCode}"/>
+                            <DataGridTextColumn Header="Name" Binding="{Binding ProductName}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </ScrollViewer>
             </StackPanel>
             <!--b Feladat-->
